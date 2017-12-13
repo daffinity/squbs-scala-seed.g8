@@ -6,6 +6,7 @@ This is a fork of https://github.com/paypal/squbs-scala-seed.g8 with changes to 
 
 The fork was created by Tom Schweiger; please direct questions, suggestions, and compaints to him.
 
+To use a port other than 8080 (the default port) edit `src/main/resources/application.conf` 
 
 Getting Started
 ---------------
