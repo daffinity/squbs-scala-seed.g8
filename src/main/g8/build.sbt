@@ -36,31 +36,35 @@ mainClass in (Compile, run) := Some("org.squbs.unicomplex.Bootstrap")
 // enable scalastyle on compile
 lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 
-compileScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Compile).toTask("").value
+compileScalastyle := scalastyle.in(Compile).toTask("").value
 
-(compile in Compile) <<= (compile in Compile) dependsOn compileScalastyle
+(compile in Compile) := ((compile in Compile) dependsOn compileScalastyle).value
 
 coverageMinimum := 100
 
 coverageFailOnMinimum := true
 
-xerial.sbt.Pack.packSettings
+enablePlugins(PackPlugin)
 
 packMain := Map("run" -> "org.squbs.unicomplex.Bootstrap")
 
 enablePlugins(DockerPlugin)
 
+imageNames in docker := Seq(
+  ImageName(s"${organization.value}/${name.value}:${version.value}")
+)
+
 dockerfile in docker := {
   val jarFile: File = sbt.Keys.`package`.in(Compile, packageBin).value
   val classpath = (managedClasspath in Compile).value
   val mainclass = "org.squbs.unicomplex.Bootstrap"
-  val jarTarget = s"/app/\${jarFile.getName}"
+  val jarTarget = s"/app/${jarFile.getName}"
   // Make a colon separated classpath with the JAR file
   val classpathString = classpath.files.map("/app/" + _.getName)
     .mkString(":") + ":" + jarTarget
   new Dockerfile {
     // Base image
-    from("java")
+    from("openjdk:8-jre-alpine")
     // Add all files on the classpath
     add(classpath.files, "/app/")
     // Add the JAR file
@@ -69,3 +73,4 @@ dockerfile in docker := {
     entryPoint("java", "-cp", classpathString, mainclass)
   }
 }
+

@@ -91,4 +91,7 @@ project/plugins/project/
 .worksheet
 
 
+# OSX, emacs backup files
+.DS_Store
+*~
 
