@@ -7,7 +7,7 @@ To make a basic Giter8 project template:
 - Copy the files and directory structure for the template project to that directory (for example a "Hello World" project),
 as though that were the template's root directory.
 - create a `default.properties` file that lists key-value pairs.  Giter8 will prompt the user for each key, with the value offered as the default
-- In your project, where you want to make substitutions from the prompts, put '$<key>$', both in the files and in the directory structure.  Note
+- In your project, where you want to make substitutions from the prompts, put '$key$', both in the files and in the directory structure.  Note
 that the dollar sign '$' is special.  If in any of your files you have a '$' sign that is not part of the find-and-replace, you will want to escape it,
 as in `\$`.
 
