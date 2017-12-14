@@ -10,12 +10,14 @@ To use a port other than 8080 (the default port) edit `src/main/resources/applic
 
 Getting Started
 ---------------
+ 
+* Don't `git clone` this project!  
 
-* Don't `git clone` this project,  the next step will fetch and set up everyting 
+* Create a directory for your project
 
-* Run `sbt new daffinity/squbs-scala-seed.g8` from the directory you want to create the squbs scala app.
+* Once in that directory, run   `sbt new daffinity/squbs-scala-seed.g8`
 
-* Enter the requested details.
+* Enter the requested details
 
 * Celebrate
 
