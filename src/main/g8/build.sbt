@@ -57,7 +57,7 @@ dockerfile in docker := {
   val jarFile: File = sbt.Keys.`package`.in(Compile, packageBin).value
   val classpath = (managedClasspath in Compile).value
   val mainclass = "org.squbs.unicomplex.Bootstrap"
-  val jarTarget = s"/app/${jarFile.getName}"
+  val jarTarget = s"/app/\${jarFile.getName}"
   // Make a colon separated classpath with the JAR file
   val classpathString = classpath.files.map("/app/" + _.getName)
     .mkString(":") + ":" + jarTarget
