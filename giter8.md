@@ -22,3 +22,10 @@ class HelloWorld {
 
 ```
 
+Likewise, directory paths can be dynamically generated from the prompts.  For example, the HelloWorld.scala file would be, from the template root direcory,
+`src/main/g8/src/main/scala/$organization__packaged$/$project__packaged$/HelloWorld.scala`
+
+When you define the replacement, you can mess with the formating.  See [here](http://www.foundweekends.org/giter8/formatting.html).
+
+
+
