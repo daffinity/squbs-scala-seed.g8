@@ -25,7 +25,7 @@ class HelloWorld {
 Likewise, directory paths can be dynamically generated from the prompts.  For example, the HelloWorld.scala file would be, from the template root direcory,
 `src/main/g8/src/main/scala/$organization__packaged$/$project__packaged$/HelloWorld.scala`
 
-When you define the replacement, you can mess with the formating.  See [here](http://www.foundweekends.org/giter8/formatting.html).
+When you define the replacement, you can mess with the formating.  See [here](http://www.foundweekends.org/giter8/formatting.html).  The formatting for a substitution in a file is preceeded by a semicolon (;), and in a path by a double-underbar.  The path `$project__packaged$` will rename the path to the 'project' value and format it with slashes replacing dots. 
 
 
 
