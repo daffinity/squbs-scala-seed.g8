@@ -1,4 +1,3 @@
-// mukmuk
 
 name := "$appname;format="norm"$"
 
