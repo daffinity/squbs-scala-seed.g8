@@ -11,8 +11,9 @@ To use a port other than 8080 (the default port) edit `src/main/resources/applic
 Getting Started
 ---------------
 
-* Run `sbt new paypal/squbs-scala-seed.g8` from the directory you want to create the squbs scala app.
+* Run `sbt new daffinity/squbs-scala-seed.g8` from the directory you want to create the squbs scala app.
 
 * Enter the requested details.
 
 * After that you can delete this README.markdown as well as src/main/g8 to clean up
+
