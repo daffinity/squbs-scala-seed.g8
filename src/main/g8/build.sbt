@@ -50,7 +50,7 @@ packMain := Map("run" -> "org.squbs.unicomplex.Bootstrap")
 enablePlugins(DockerPlugin)
 
 imageNames in docker := Seq(
-  ImageName(s"${organization.value}/${name.value}:${version.value}")
+  ImageName(s"\${organization.value}/\${name.value}:\${version.value}")
 )
 
 dockerfile in docker := {
