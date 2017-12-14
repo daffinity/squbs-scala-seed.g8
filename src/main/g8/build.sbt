@@ -26,8 +26,8 @@ libraryDependencies ++= Seq(
   "org.squbs" %% "squbs-admin" % Versions.squbsV,
   "org.json4s" %% "json4s-native" %  Versions.json4sV,
   "de.heikoseeberger" %% "akka-http-json4s" % Versions.akkaHttpJson4sV,
-  "org.squbs" %% "squbs-testkit" % Versions.squbsV % "test",
-  "com.typesafe.akka" %% "akka-http-testkit" % Versions.akkaHttpV % "test"
+  "org.squbs" %% "squbs-testkit" % Versions.squbsV % Test,
+  "com.typesafe.akka" %% "akka-http-testkit" % Versions.akkaHttpV % Test
 )
 
 mainClass in (Compile, run) := Some("org.squbs.unicomplex.Bootstrap")
