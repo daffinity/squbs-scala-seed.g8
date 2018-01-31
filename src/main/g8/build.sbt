@@ -51,7 +51,7 @@ enablePlugins(JavaAppPackaging, AshScriptPlugin)
 
 
 imageNames in docker := Seq(
-  ImageName(s"${organization.value}\/${name.value}:${version.value}")
+  ImageName(s"${organization.value}\${name.value}:${version.value}")
 )
 dockerBaseImage := "openjdk:8-jre-alpine"
 
