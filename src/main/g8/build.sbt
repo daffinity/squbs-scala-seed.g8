@@ -43,15 +43,5 @@ coverageMinimum := 100
 
 coverageFailOnMinimum := true
 
-enablePlugins(PackPlugin)
-
-packMain := Map("run" -> "org.squbs.unicomplex.Bootstrap")
-
-enablePlugins(JavaAppPackaging, AshScriptPlugin)
-
-
-imageNames in docker := Seq(
-  ImageName(s"\${organization.value}\${name.value}:\${version.value}")
-)
-dockerBaseImage := "openjdk:8-jre-alpine"
-
+lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging, AshScriptPlugin)
+     .settings(  dockerBaseImage := "openjdk:8-jre-alpine" )
